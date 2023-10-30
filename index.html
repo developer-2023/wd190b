@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>arrow function</title>
+</head>
+<body>
+    
+    <script>
+        // standard function declaration
+        function multiply1(a, b) {
+            return a * b;
+        }
+
+        // arrow function declaration
+        // => fat arrow
+        const multiply2 = (a, b) => a * b;
+        
+        // calling both functions
+        console.log(multiply1(3, 10)); // 30
+        console.log(multiply2(3, 10)); // 30
+
+        // arrow function can be more complex
+        const subtract = (a, b) => {
+            return a - b;
+        }
+
+        // calling in the same way
+        console.log(subtract(3, 10));
+
+        // arrow function has no arguments operator
+        // const showArguments1 = () => console.log(arguments);
+        // showArguments();
+
+        const showArguments2 = (...params) => console.log(params);
+        showArguments2(1,2,3,4,"a");
+
+        // how to return object from arrow function
+        let getObj = (data) => {
+            return {
+                ...data,
+                info: "Some object"
+            };
+        };
+
+        let obj = {
+            a: 1,
+            b: 30
+        };
+
+        console.log(getObj(obj));
+
+        // how to return object from arrow without return statement
+        let getObj2 = (data) => ({
+            ...data,
+            info: "text"
+        });
+        console.log(getObj2(obj));
+</script>
+</body>
+</html>
